@@ -49,7 +49,7 @@ function bandsInTown(parameter) {
     }
 }
 
-var queryUrl = "https://rest.bandsintown.com/artists/" + movieName + "/events?app_id=codingbootcamp";
+var queryUrl = "https://rest.bandsintown.com/artists/" + artists + "/events?app_id=codingbootcamp";
 
 
 request(queryUrl, function (error, response, body) {
