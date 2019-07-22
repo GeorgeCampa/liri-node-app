@@ -4,7 +4,7 @@ var keys = require("./keys.js");
 var Spotify = require("node-spotify-api");
 var axios = require("axios");
 var fs = require("fs");
-var moment = require("moment")
+var moment = require("moment");
 
 var appCommand = process.argv[2];
 var userSearch = process.argv.slice(3).join(" ");
@@ -48,8 +48,8 @@ function getSpotify(songName) {
         console.log("=============================");
         console.log("Artist(s) Name: " + data.tracks.items[0].artists[0].name + "\r\n");
         console.log("Song Name: " + data.tracks.items[0].name + "\r\n");
-        cojnsole.log("Song Preview link: " + data.tracks.items[0].href + "\r\n");
-        logIt("Album: " + data.tracks.items[0].album.name + "\r\n");
+        console.log("Song Preview link: " + data.tracks.items[0].href + "\r\n");
+        console.log("Album: " + data.tracks.items[0].album.name + "\r\n");
 
         var logSong = "=====Begin Sportiy Log Entry====" + "\nArtist;" + data.tracks.items[0].album.artists[0].name;
 
@@ -68,8 +68,8 @@ function getBandsInTown(artist) {
             console.log("=============================");
             console.log("Name of the venue: " + response.data[0].venue.name + "\r\n");
             console.log("Venue Location: " + response.data[0].venue.city + "\r\n");
-            cojnsole.log("Date of event: " + moment(response.data[0].datetime).format("MM-DD-YYYY") + "\r\n");
-            logIt("Album: " + data.tracks.items[0].album.name + "\r\n");
+            console.log("Date of event: " + moment(response.data[0].datetime).format("MM-DD-YYYY") + "\r\n");
+            confirm.log("Album: " + data.tracks.items[0].album.name + "\r\n");
 
             var logConcert = "=====Begin Concert Log Entry====" + "\nName of the musician:" + artist + "\nName of the venue:";
 
@@ -96,7 +96,7 @@ function getOMDB(movie) {
                 console.log("* Country Where: " + response.data.Country + "\r\n");
                 console.log("Language: " + response.data.Language + "\r\n");
                 console.log("Plot: " + response.data.Plot + "\r\n");
-                doconsld.nlogIt("Actors: " + response.data.Actors + "\r\n");
+                console.log("Actors: " + response.data.Actors + "\r\n");
 
                 var logMovie = "=====Begin Movie Log Entry====" + "\nName title:" + response.data.Titled + "\nYear released:";
 
@@ -134,4 +134,4 @@ function getOMDB(movie) {
     };
 
     liriRun(appCommand, userSearch);
-};
+}
